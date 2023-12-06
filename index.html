@@ -1,0 +1,25 @@
+<html>
+    <header>
+        <title>🤨</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./favicon.gif">
+    </header>
+     <body style="overflow:hidden; background-color: #cecece;">
+        <video src="./video.mp4" loop autoplay muted width="100%" id="video"></video>
+        <audio src="./audio.mp3" loop autoplay="autoplay" id="audio"></audio>
+        <script>
+            document.querySelector('body').addEventListener('click', function() {
+                document.querySelector('audio').play();
+            });
+            let videoSpeed = 1;
+            let audioSpeed = 1;
+
+            onmousemove = function(e){
+                videoSpeed = e.clientX / window.innerWidth * 10;
+                document.querySelector("#video").playbackRate = videoSpeed;
+
+                audioSpeed = 2-(e.clientY / window.innerHeight * 2);
+                document.querySelector("#audio").playbackRate = audioSpeed;
+            }
+        </script>
+    </body>
+</html>
